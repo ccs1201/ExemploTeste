@@ -25,7 +25,6 @@ public class CalculadoraDesconto {
         if (percentual > 100f) {
             throw new RuntimeException("Desconto não pode maior que cem por cento");
         }
-
     }
 
     /**
@@ -38,6 +37,4 @@ public class CalculadoraDesconto {
             throw new RuntimeException("Desconto não pode ser menor que um por cento");
         }
     }
-
-
 }
