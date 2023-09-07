@@ -27,7 +27,7 @@ class CalculadoraDescontoTest {
     }
 
     @Test
-    void aplicarDescdontoSucesso() {
+    void aplicarDescontoSucesso() {
         var expected = BigDecimal.valueOf(90).setScale(2);
         var actual = calculadoraDesconto.aplicarDesconto(valor, 10f);
 
