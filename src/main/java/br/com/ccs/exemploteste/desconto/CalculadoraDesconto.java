@@ -14,11 +14,11 @@ public class CalculadoraDesconto {
         return valor.multiply(BigDecimal.valueOf(1 - (percentual / 100f))).setScale(2, RoundingMode.HALF_UP);
     }
 
-
     /**
      * Desconto não pode ser maior que 100%
      *
      * @param percentual
+     * @throws RuntimeException se desconto for maior que 100%
      */
     private void validarDescontoMaximo(Float percentual) {
 
@@ -31,6 +31,7 @@ public class CalculadoraDesconto {
      * Desconto não pode ser menor que 1%
      *
      * @param percentual
+     * @throws RuntimeException se o desconto for menor que 1%
      */
     private void validarDescontoMinimimo(Float percentual) {
         if (percentual < 1f) {
