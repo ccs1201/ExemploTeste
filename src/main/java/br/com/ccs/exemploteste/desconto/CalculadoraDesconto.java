@@ -5,7 +5,14 @@ import java.math.RoundingMode;
 
 public class CalculadoraDesconto {
 
-
+    /**
+     * Aplica o desconto no valor informado.
+     *
+     * @param valor      valor original que tera o desconto calculado.
+     * @param percentual percentual do desconto que deve ser aplicado.
+     * @return valor com desconto aplicado.
+     * @throws RuntimeException se o desconto informado for menor que 1% ou maior que 100%.
+     */
     public BigDecimal aplicarDesconto(BigDecimal valor, Float percentual) {
 
         validarDescontoMaximo(percentual);
@@ -15,7 +22,7 @@ public class CalculadoraDesconto {
     }
 
     /**
-     * Desconto não pode ser maior que 100%
+     * Valida o percentual máximo de desconto permitido.
      *
      * @param percentual
      * @throws RuntimeException se desconto for maior que 100%
@@ -23,12 +30,12 @@ public class CalculadoraDesconto {
     private void validarDescontoMaximo(Float percentual) {
 
         if (percentual > 100f) {
-            throw new RuntimeException("Desconto não pode maior que cem por cento");
+            throw new RuntimeException("Desconto não pode ser maior que cem por cento");
         }
     }
 
     /**
-     * Desconto não pode ser menor que 1%
+     * Valida o percentual mínimo de desconto permitido.
      *
      * @param percentual
      * @throws RuntimeException se o desconto for menor que 1%
