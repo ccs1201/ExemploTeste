@@ -33,4 +33,18 @@ class CalculadoraDescontoTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    void aplicarDescontoCemPorCento() {
+        var expected = BigDecimal.ZERO.setScale(2);
+
+        Assertions.assertEquals(expected, calculadoraDesconto.aplicarDesconto(valor, 100f));
+    }
+
+    @Test
+    void aplicarDescontoUmPorCento() {
+        var expected = BigDecimal.valueOf(99).setScale(2);
+
+        Assertions.assertEquals(expected, calculadoraDesconto.aplicarDesconto(valor, 1f));
+    }
 }
